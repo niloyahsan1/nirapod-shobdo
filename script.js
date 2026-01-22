@@ -310,7 +310,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	const demoBtn = document.querySelector(".btn-secondary");
 	if (demoBtn && demoBtn.textContent.includes("Demo")) {
 		demoBtn.addEventListener("click", function () {
-			window.open("assets/demo.mp4", "_blank");
+			window.open("assets/demo/Demo.mp4", "_blank");
 			// showNotification('Demo video coming soon! Stay tuned.', 'info');
 		});
 	}
@@ -340,23 +340,6 @@ document.addEventListener("DOMContentLoaded", function () {
 				firstElement.focus();
 			}
 		}
-	});
-
-	// Add loading state for images (excluding logo)
-	const images = document.querySelectorAll("img:not(.nav-logo-img)");
-	images.forEach((img) => {
-		img.addEventListener("load", function () {
-			this.style.opacity = "1";
-		});
-
-		img.addEventListener("error", function () {
-			this.style.opacity = "0.5";
-			this.alt = "Image not available";
-		});
-
-		// Set initial opacity for fade-in effect
-		img.style.opacity = "0";
-		img.style.transition = "opacity 0.3s ease";
 	});
 
 	// Performance optimization: Debounce scroll events
